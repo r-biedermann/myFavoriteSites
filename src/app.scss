@@ -1,14 +1,13 @@
-.userInfo {
+.heading {
+  display: flex; 
+  justify-content: space-between;
+}
+
+.search {
+  border: none;
+}
+
+.searchbar {
   display: flex;
-  flex-direction: column;
-
-  p {
-    text-align: center;
-  }
-
-  .btnWrapper {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-  }
+  border-bottom: solid black 1px;
 }
