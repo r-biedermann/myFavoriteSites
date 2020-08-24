@@ -51,7 +51,7 @@ function createList(data) {
         name.innerHTML = website.appstoreName.substr(0, 15);
         background.classList.add('background');
         img.style = `background-image: url(https://sub60.tobit.com/l/${website.locationId}?size=70); z-index: 1000; width: 70px; height: 70px;`;
-        background.addEventListener('click', () => { chayns.openUrlInBrowser(`https://chayns.net/${website.siteId}`); });
+        element.addEventListener('click', () => { chayns.openUrlInBrowser(`https://chayns.net/${website.siteId}`); });
 
         $list.appendChild(element);
         element.appendChild(background);
