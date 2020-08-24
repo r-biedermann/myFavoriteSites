@@ -37,16 +37,54 @@
                         <div class="accordion__head__icon accordion--trigger">
                             <i class="ts-angle-right"></i>
                         </div>
-                        <div class="accordion__head__title  accordion--trigger" style="font-size: 16px;">
-                            Deine Seite fehlt noch
+                        <div class="accordion__head__title  accordion--trigger">
+                            Deine Seite fehlt noch?
                         </div>
                         <div class="accordion__head__right  accordion--trigger">
                         </div>
                     </div>
                     <div class="accordion__body">
-                        <div class="accordion__item">
-                            <div class="form">
-
+                        <div class="accordion__item form">
+                            <div class="form-line input-group ">
+                                <input class="input form-item" id="firstName" type="text" required>
+                                <label class="form-label">Vorname*</label>
+                            </div>
+                            <div class="form-line input-group">
+                                <input class="input form-item" id="lastName" type="text" required>
+                                <label class="form-label">Nachname*</label>
+                            </div>
+                            <div class="form-line input-group">
+                                <input class="input form-item" id="eMail" type="text" required>
+                                <label class="form-label">E-Mail*</label>
+                            </div>
+                            <div class="form-line input-group">
+                                <input class="input form-item" id="address" type="text">
+                                <label class="form-label">Straße/Hausnummer</label>
+                            </div>
+                            <div class="two-items">
+                                <div class="input-group form-plz">
+                                    <input class="input" id="postcode" type="text">
+                                    <label class="form-label">PLZ</label>
+                                </div>
+                                <div class="input-group form-place">
+                                    <input class="input" id="place" type="text">
+                                    <label class="form-label">Ort</label>
+                                </div>
+                            </div>
+                            <div class="form-line input-group">
+                                <input class="input form-item" id="siteName" type="text" required>
+                                <label class="form-label">Deine Seite*</label>
+                            </div>
+                            <div class="form-line">
+                                <textarea class="input form-item" id="comment" placeholder="Anmerkungen" type="text"></textarea>
+                            </div>
+                            <div class="form-line">
+                                <p>*Pflichtfelder</p>
+                            </div>
+                            <div class="form-line">
+                                <div class="centered">
+                                    <button class="button" id="send">Seite hinzufügen</button>
+                                </div>
                             </div>
                         </div>
                     </div>

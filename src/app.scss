@@ -27,3 +27,47 @@
   height: 70px;
   z-index: -1;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.form-line {
+  width: 100%;
+  padding-right: 0 !important;
+  margin: 5px 0;
+}
+
+.two-items {
+  display: flex;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.form-plz {
+
+  margin-right: 5px;
+}
+
+.form-place {
+  width: 100%;
+}
+
+.form-item {
+  width: 100%;
+}
+
+.form-label {
+  margin-left: 10px !important;
+}
+
+footer {
+  font-size: 16px;
+}
+
+.centered {
+  width: 100%;
+  text-align: center;
+}
