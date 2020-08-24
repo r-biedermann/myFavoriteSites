@@ -28,11 +28,18 @@ function createList(data) {
     for (const website of data) {
         const element = document.createElement('DIV');
         const name = document.createElement('P');
+        const img = document.createElement('IMG');
+        const link = document.createElement('A');
 
         element.classList.add('listElement');
-        name.innerHTML = website.appstoreName;
-        
+        name.innerHTML = website.appstoreName.substr(0, 20);
+        img.src = `https://sub60.tobit.com/l/${website.locationId}?size=70`;
+        link.addEventListener('click', () => { chayns.openUrlInBrowser(`https://chayns.net/${website.siteId}`); });
+        link.classList.add('link');
+
         $list.appendChild(element);
+        element.appendChild(link);
+        link.appendChild(img);
         element.appendChild(name);
     }
 }
