@@ -4,6 +4,7 @@ import './app.scss';
 const init = async () => {
     try {
         await chayns.ready;
+        document.body.style = 'cursor: wait';
         getData();
         if (chayns.env.user.isAuthenticated) {
             setName();
@@ -11,7 +12,7 @@ const init = async () => {
         chayns.ui.initAll();
         const inputs = document.querySelectorAll('.form-item');
         for (let i = 0; i < inputs.length; i++) {
-            inputs[i].addEventListener('change', checkForText);
+            inputs[i].addEventListener('input', checkForText);
         }
         document.querySelector('#send').addEventListener('click', sendForm);
         document.querySelector('.accordion').addEventListener('click', accordionClicked);
@@ -31,6 +32,9 @@ const getData = () => {
             createList(json.Data);
         }).catch(function (ex) {
             console.log('parsing failed', ex);
+        }).then(function () {
+            document.querySelector('.hidden').classList.remove('hidden');
+            document.body.style = 'cursor: default';
         });
 };
 
@@ -68,6 +72,34 @@ const checkForText = () => {
         } else {
             divs[i].classList.add('labelRight');
         }
+    }
+    if (document.querySelector('#firstName').value === '') {
+        document.querySelector('#firstName').classList.add('wrong');
+        document.querySelector('#firstName-label').classList.add('wrong');
+    } else {
+        document.querySelector('#firstName').classList.remove('wrong');
+        document.querySelector('#firstName-label').classList.remove('wrong');
+    }
+    if (document.querySelector('#lastName').value === '') {
+        document.querySelector('#lastName').classList.add('wrong');
+        document.querySelector('#lastName-label').classList.add('wrong');
+    } else {
+        document.querySelector('#lastName').classList.remove('wrong');
+        document.querySelector('#lastName-label').classList.remove('wrong');
+    }
+    if (document.querySelector('#eMail').value === '') {
+        document.querySelector('#eMail').classList.add('wrong');
+        document.querySelector('#eMail-label').classList.add('wrong');
+    } else {
+        document.querySelector('#eMail').classList.remove('wrong');
+        document.querySelector('#eMail-label').classList.remove('wrong');
+    }
+    if (document.querySelector('#siteName').value === '') {
+        document.querySelector('#siteName').classList.add('wrong');
+        document.querySelector('#siteName-label').classList.add('wrong');
+    } else {
+        document.querySelector('#siteName').classList.remove('wrong');
+        document.querySelector('#siteName-label').classList.remove('wrong');
     }
 };
 

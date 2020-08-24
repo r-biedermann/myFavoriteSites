@@ -32,7 +32,7 @@
                 </div>
             </main>
             <footer>
-                <div class="accordion" data-group="1">
+                <div class="accordion hidden" data-group="1">
                     <div class="accordion__head">
                         <div class="accordion__head__icon accordion--trigger">
                             <i class="ts-angle-right"></i>
@@ -47,15 +47,15 @@
                         <div class="accordion__item form">
                             <div class="form-line input-group ">
                                 <input class="input form-item" id="firstName" type="text" required>
-                                <label class="form-label">Vorname*</label>
+                                <label class="form-label" id="firstName-label">Vorname</label>
                             </div>
                             <div class="form-line input-group">
                                 <input class="input form-item" id="lastName" type="text" required>
-                                <label class="form-label">Nachname*</label>
+                                <label class="form-label" id="lastName-label">Nachname</label>
                             </div>
                             <div class="form-line input-group">
                                 <input class="input form-item" id="eMail" type="text" required>
-                                <label class="form-label">E-Mail*</label>
+                                <label class="form-label" id="eMail-label">E-Mail</label>
                             </div>
                             <div class="form-line input-group">
                                 <input class="input form-item" id="address" type="text">
@@ -73,17 +73,14 @@
                             </div>
                             <div class="form-line input-group">
                                 <input class="input form-item" id="siteName" type="text" required>
-                                <label class="form-label">Deine Seite*</label>
+                                <label class="form-label" id="siteName-label">Deine Seite</label>
                             </div>
                             <div class="form-line">
                                 <textarea class="input form-item" id="comment" placeholder="Anmerkungen" type="text"></textarea>
                             </div>
                             <div class="form-line">
-                                <p>*Pflichtfelder</p>
-                            </div>
-                            <div class="form-line">
                                 <div class="centered">
-                                    <button class="button" id="send">Seite hinzufügen</button>
+                                    <button class="button" id="send">Hinzufügen</button>
                                 </div>
                             </div>
                         </div>

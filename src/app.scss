@@ -21,16 +21,16 @@ header {
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
-  justify-content: center;
+  justify-content: left;
 }
 
 .listElement {
-  // width: 16.6%;
   flex: 0 0 125px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 5px;
+  cursor: pointer;
 }
 
 .background {
@@ -82,4 +82,14 @@ footer {
 .centered {
   width: 100%;
   text-align: center;
+  padding-bottom: 10px;
+}
+
+.wrong {
+  font-weight: 700;
+  color: rgb(150, 6, 11) !important;
+}
+
+.hidden {
+  display: none;
 }
