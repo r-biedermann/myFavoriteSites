@@ -26,20 +26,20 @@ const getData = () => {
 
 function createList(data) {
     for (const website of data) {
-        const element = document.createElement('DIV');
-        const name = document.createElement('P');
-        const img = document.createElement('IMG');
-        const link = document.createElement('A');
+        const element = document.createElement('div');
+        const name = document.createElement('p');
+        const background = document.createElement('div');
+        const img = document.createElement('div');
 
         element.classList.add('listElement');
-        name.innerHTML = website.appstoreName.substr(0, 20);
-        img.src = `https://sub60.tobit.com/l/${website.locationId}?size=70`;
-        link.addEventListener('click', () => { chayns.openUrlInBrowser(`https://chayns.net/${website.siteId}`); });
-        link.classList.add('link');
+        name.innerHTML = website.appstoreName.substr(0, 15);
+        background.classList.add('background');
+        img.style = `background-image: url(https://sub60.tobit.com/l/${website.locationId}?size=70); z-index: 1000; width: 70px; height: 70px;`;
+        background.addEventListener('click', () => { chayns.openUrlInBrowser(`https://chayns.net/${website.siteId}`); });
 
         $list.appendChild(element);
-        element.appendChild(link);
-        link.appendChild(img);
+        element.appendChild(background);
+        background.appendChild(img);
         element.appendChild(name);
     }
 }

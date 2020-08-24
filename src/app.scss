@@ -18,9 +18,12 @@
 }
 
 .listElement {
-  width: 14%;
+  width: 16.6%;
 }
 
-.link {
-  text-decoration: none;
+.background {
+  background-image: url('https://sub60.tobit.com/l/183128?size=70');
+  width: 70px;
+  height: 70px;
+  z-index: -1;
 }
