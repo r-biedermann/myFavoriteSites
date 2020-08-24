@@ -116,6 +116,15 @@ function sendForm() {
         ).then(function (result) {
             if (result.ok) {
                 chayns.dialog.alert('', 'Die Nachricht wurde versendet.');
+                $firstName.value = '';
+                $lastName.value = '';
+                $eMail.value = '';
+                $address.value = '';
+                $postcode.value = '';
+                $place.value = '';
+                $siteName.value = '';
+                $comment.value = '';
+                checkForText();
             } else {
                 chayns.dialog.alert('', 'Ein Fehler ist aufgetreten.');
             }
