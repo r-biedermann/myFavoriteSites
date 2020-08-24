@@ -38,7 +38,9 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "whatwg-fetch": "^3.4.0"
+  },
   "repository": {
     "type": "git"
   }

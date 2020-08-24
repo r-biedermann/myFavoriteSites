@@ -11,3 +11,12 @@
   display: flex;
   border-bottom: solid black 1px;
 }
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.listElement {
+  width: 14%;
+}
