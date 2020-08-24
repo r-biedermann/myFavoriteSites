@@ -99,12 +99,10 @@ function sendForm() {
         } else {
             message = `${personalData} \n hat ${$siteName.value} vorgeschlagen \n "${$comment.value}"`;
         }
+    } else if ($comment.value === '') {
+        message = `${personalData} \n ${fullAddress} \n hat ${$siteName.value} vorgeschlagen`;
     } else {
-        if ($comment.value === '') {
-            message = `${personalData} \n ${fullAddress} \n hat ${$siteName.value} vorgeschlagen`;
-        } else {
-            message = `${personalData} \n ${fullAddress} \n hat ${$siteName.value} vorgeschlagen \n "${$comment.value}"`;
-        }
+        message = `${personalData} \n ${fullAddress} \n hat ${$siteName.value} vorgeschlagen \n "${$comment.value}"`;
     }
     if ($firstName.value === '' || $lastName.value === '' || $eMail.value === '' || $siteName.value === '') {
         chayns.dialog.alert('', 'Bitte fülle alle Pflichtfelder aus.');
