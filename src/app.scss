@@ -1,6 +1,11 @@
+header {
+  padding-bottom: 10px;
+}
+
 .heading {
   display: flex; 
   justify-content: space-between;
+  padding-bottom: 10px;
 }
 
 .search {
@@ -19,6 +24,7 @@
 
 .listElement {
   width: 16.6%;
+  padding-bottom: 5px;
 }
 
 .background {
