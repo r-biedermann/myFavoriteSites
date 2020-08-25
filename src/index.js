@@ -1,10 +1,14 @@
 // import login from './utils/login';
 import './app.scss';
 
+const defaultSearch = 'love';
+let searchString = defaultSearch;
+let timeout;
+let hideListItems = true;
+
 const init = async () => {
     try {
         await chayns.ready;
-        document.body.style = 'cursor: wait';
         getData();
         if (chayns.env.user.isAuthenticated) {
             setName();
@@ -16,6 +20,8 @@ const init = async () => {
         }
         document.querySelector('#send').addEventListener('click', sendForm);
         document.querySelector('.accordion').addEventListener('click', accordionClicked);
+        document.querySelector('#search').addEventListener('input', searchInput);
+        document.querySelector('#toggle').addEventListener('click', toggleList);
     } catch (err) {
         console.error('No chayns environment found', err);
     }
@@ -24,7 +30,12 @@ const init = async () => {
 const $list = document.querySelector('.list');
 
 const getData = () => {
-    fetch('https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=love&Skip=0&Take=50')
+    document.querySelector('.accordion').classList.add('hidden');
+    chayns.showWaitCursor();
+    while ($list.firstElementChild !== null) {
+        $list.firstElementChild.remove();
+    }
+    fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${searchString}&Skip=0&Take=60`)
         .then(function (response) {
             return response.json();
         }).then(function (json) {
@@ -32,9 +43,12 @@ const getData = () => {
             createList(json.Data);
         }).catch(function (ex) {
             console.log('parsing failed', ex);
-        }).then(function () {
-            document.querySelector('.hidden').classList.remove('hidden');
-            document.body.style = 'cursor: default';
+            chayns.hideWaitCursor();
+        })
+        .then(function () {
+            document.querySelector('.accordion').classList.remove('hidden');
+            chayns.hideWaitCursor();
+            toggleList();
         });
 };
 
@@ -42,6 +56,37 @@ const setName = () => {
     document.querySelector('#firstName').value = chayns.env.user.firstName;
     document.querySelector('#lastName').value = chayns.env.user.lastName;
     checkForText();
+};
+
+const searchInput = () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(search, 500);
+};
+
+const search = () => {
+    if (document.querySelector('#search').value === '') {
+        searchString = defaultSearch;
+    } else {
+        searchString = document.querySelector('#search').value;
+    }
+    getData();
+};
+
+const toggleList = () => {
+    const items = $list.children;
+    if (hideListItems) {
+        for (let i = 30; i < items.length; i++) {
+            items[i].classList.add('hidden');
+        }
+        document.querySelector('#toggle').innerHTML = 'Mehr';
+        hideListItems = false;
+    } else {
+        for (let i = 30; i < items.length; i++) {
+            items[i].classList.remove('hidden');
+        }
+        document.querySelector('#toggle').innerHTML = 'Weniger';
+        hideListItems = true;
+    }
 };
 
 function createList(data) {
