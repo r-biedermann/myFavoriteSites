@@ -142,9 +142,11 @@ const checkForText = () => {
     }
 };
 
-function accordionClicked() {
-    if (!chayns.env.user.isAuthenticated) {
-        chayns.addAccessTokenChangeListener(setName);
+function buttonClicked() {
+    if (chayns.env.user.isAuthenticated) {
+        sendForm();
+    } else {
+        chayns.addAccessTokenChangeListener(sendForm);
         chayns.login();
     }
 }
@@ -205,8 +207,7 @@ const init = async () => {
         for (let i = 0; i < inputs.length; i++) {
             inputs[i].addEventListener('input', checkForText);
         }
-        document.querySelector('#send').addEventListener('click', sendForm);
-        $accordion.addEventListener('click', accordionClicked);
+        document.querySelector('#send').addEventListener('click', buttonClicked);
         $search.addEventListener('input', searchInput);
         $toggle.addEventListener('click', toggleList);
     } catch (err) {
