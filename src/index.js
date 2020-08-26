@@ -54,7 +54,7 @@ const setName = () => {
 
 const searchInput = () => {
     clearTimeout(timeout);
-    timeout = setTimeout(search, 500);
+    timeout = setTimeout(search, 800);
 };
 
 const search = () => {
@@ -101,7 +101,16 @@ function createList(data) {
         background.appendChild(img);
         element.appendChild(name);
     }
+    checkLoadMore(data);
 }
+
+const checkLoadMore = (items) => {
+    if (items.length > 30) {
+        $toggle.classList.remove('hidden');
+    } else {
+        $toggle.classList.add('hidden');
+    }
+};
 
 const checkForText = () => {
     const divs = document.querySelectorAll('.input-group');
