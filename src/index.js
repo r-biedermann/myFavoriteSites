@@ -208,6 +208,7 @@ const init = async () => {
     try {
         await chayns.ready;
         getData();
+        checkForText();
         if (chayns.env.user.isAuthenticated) {
             setName();
         }
