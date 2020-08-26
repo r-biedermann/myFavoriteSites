@@ -84,24 +84,35 @@ const toggleList = () => {
 };
 
 function createList(data) {
-    for (let i = 0; i < data.length; i++) {
-        const element = document.createElement('div');
-        const name = document.createElement('p');
-        const background = document.createElement('div');
-        const img = document.createElement('div');
+    if (data === null) {
+        const nothing = document.createElement('div');
+        const noSite = document.createElement('p');
+        nothing.style = 'width: 100%; justify-content: center;';
+        noSite.innerHTML = 'Keine Seite gefunden';
+        noSite.style = 'font-size: 30px; font-weight: 700;';
+        $list.appendChild(nothing);
+        nothing.appendChild(noSite);
+        $toggle.classList.add('hidden');
+    } else {
+        for (let i = 0; i < data.length; i++) {
+            const element = document.createElement('div');
+            const name = document.createElement('p');
+            const background = document.createElement('div');
+            const img = document.createElement('div');
 
-        element.classList.add('listElement');
-        name.innerHTML = data[i].appstoreName.substr(0, 15);
-        background.classList.add('background');
-        img.style = `background-image: url(https://sub60.tobit.com/l/${data[i].locationId}?size=70); z-index: 1000; width: 70px; height: 70px; background-size: cover;`;
-        element.addEventListener('click', () => { chayns.openUrlInBrowser(`https://chayns.net/${data[i].siteId}`); });
+            element.classList.add('listElement');
+            name.innerHTML = data[i].appstoreName.substr(0, 15);
+            background.classList.add('background');
+            img.style = `background-image: url(https://sub60.tobit.com/l/${data[i].locationId}?size=70); z-index: 1000; width: 70px; height: 70px; background-size: cover;`;
+            element.addEventListener('click', () => { chayns.openUrlInBrowser(`https://chayns.net/${data[i].siteId}`); });
 
-        $list.appendChild(element);
-        element.appendChild(background);
-        background.appendChild(img);
-        element.appendChild(name);
+            $list.appendChild(element);
+            element.appendChild(background);
+            background.appendChild(img);
+            element.appendChild(name);
+        }
+        checkLoadMore(data);
     }
-    checkLoadMore(data);
 }
 
 const checkLoadMore = (items) => {
