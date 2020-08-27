@@ -27,6 +27,14 @@ h1:hover {
   border-bottom: solid black 1px;
 }
 
+.intro{
+  transition: all 15s;
+}
+
+.intro:hover {
+  opacity: 0.2;
+}
+
 .list {
   display: flex;
   flex-wrap: wrap;
