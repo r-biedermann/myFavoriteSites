@@ -8,6 +8,16 @@ header {
   padding-bottom: 10px;
 }
 
+h1 {
+  transition: all 0.5s;
+}
+
+h1:hover {
+  font-size: 30px;
+  font-weight: 700;
+  color: blue;
+}
+
 #search {
   border: none;
 }
@@ -35,9 +45,16 @@ header {
 
 .background {
   background-image: url('https://sub60.tobit.com/l/183128?size=70');
+}
+
+.icon {
   width: 70px;
   height: 70px;
-  z-index: -1;
+  transition: all 0.2s;
+}
+
+.icon:hover{
+  filter: brightness(0.8);
 }
 
 .form {
@@ -93,4 +110,13 @@ footer {
 
 .hidden {
   display: none;
+}
+
+#send {
+  transition: all 5s;
+  transition-timing-function: cubic-bezier(.9,.2,.6,.8);
+}
+
+#send:hover {
+  background-color: red;
 }
