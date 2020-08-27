@@ -111,3 +111,12 @@ footer {
 .hidden {
   display: none;
 }
+
+#send {
+  transition: all 5s;
+  transition-timing-function: cubic-bezier(.9,.2,.6,.8);
+}
+
+#send:hover {
+  background-color: red;
+}
