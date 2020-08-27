@@ -35,9 +35,16 @@ header {
 
 .background {
   background-image: url('https://sub60.tobit.com/l/183128?size=70');
+}
+
+.icon {
   width: 70px;
   height: 70px;
-  z-index: -1;
+  transition: all 0.2s;
+}
+
+.icon:hover{
+  filter: brightness(0.8);
 }
 
 .form {

@@ -103,8 +103,10 @@ function createList(data) {
             element.classList.add('listElement');
             name.innerHTML = data[i].appstoreName.substr(0, 15);
             background.classList.add('background');
-            img.style = `background-image: url(https://sub60.tobit.com/l/${data[i].locationId}?size=70); z-index: 1000; width: 70px; height: 70px; background-size: cover;`;
+            img.style = `background-image: url(https://sub60.tobit.com/l/${data[i].locationId}?size=70); background-size: cover;`;
             element.addEventListener('click', () => { chayns.openUrlInBrowser(`https://chayns.net/${data[i].siteId}`); });
+            background.classList.add('icon');
+            img.classList.add('icon');
 
             $list.appendChild(element);
             element.appendChild(background);
