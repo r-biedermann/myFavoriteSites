@@ -8,6 +8,16 @@ header {
   padding-bottom: 10px;
 }
 
+h1 {
+  transition: all 0.5s;
+}
+
+h1:hover {
+  font-size: 30px;
+  font-weight: 700;
+  color: blue;
+}
+
 #search {
   border: none;
 }
