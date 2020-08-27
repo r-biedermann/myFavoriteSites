@@ -1,14 +1,96 @@
-.userInfo {
+header {
+  margin-bottom: 20px;
+}
+
+.heading {
+  display: flex; 
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+#search {
+  border: none;
+}
+
+.searchbar {
+  display: flex;
+  border-bottom: solid black 1px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  justify-content: left;
+}
+
+.listElement {
+  flex: 0 0 125px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
 
-  p {
-    text-align: center;
-  }
+.background {
+  background-image: url('https://sub60.tobit.com/l/183128?size=70');
+  width: 70px;
+  height: 70px;
+  z-index: -1;
+}
 
-  .btnWrapper {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-  }
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.form-line {
+  width: 100%;
+  padding-right: 0 !important;
+  margin: 5px 0;
+}
+
+.two-items {
+  display: flex;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.form-plz {
+
+  margin-right: 5px;
+}
+
+.form-place {
+  width: 100%;
+}
+
+.form-item {
+  width: 100%;
+}
+
+.form-label {
+  margin-left: 2px !important;
+}
+
+footer {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.centered {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.wrong {
+  font-weight: 700;
+  color: rgb(150, 6, 11) !important;
+}
+
+.hidden {
+  display: none;
 }

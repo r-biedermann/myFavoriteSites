@@ -1,7 +1,7 @@
 import path from 'path';
 
-const SHORTHAND = 'YOUR_SHORTHAND';
-const PROJECT_NAME = 'YOUR_PROJECT_NAME';
+const SHORTHAND = 'RB';
+const PROJECT_NAME = 'myFavoriteSites';
 
 export default (dev = false) => ({
     node: {

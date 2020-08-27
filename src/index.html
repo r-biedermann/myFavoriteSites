@@ -1,28 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="noindex" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalabel=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="https://api.chayns.net/css/v4.2">
 
-    <title>chayns® ESNext Template</title>
+    <title>My Favorite Sites</title>
 </head>
+
 <body>
-<div id="app">
-    <div class="tapp">
-        <div class="userInfo">
-            <p id="intro">
-            <div class="btnWrapper">
-                <button id="loginBtn" class="button" />
-            </div>
+    <div id="app">
+        <div class="tapp">
+            <header>
+                <div class="heading">
+                    <h1> My Favorite Sites</h1>
+                    <div class="searchbar">
+                        <input class="input" id="search" type="text" placeholder="Suche">
+                        <i class="fal fa-search" style="width: 25px; height: 25px; margin-top: auto;"></i>
+                    </div>
+                </div>
+                <p>Hier findest du eine Übersicht über Chayns-Sites. <br> Wenn du deine eigene Seite hinzufügen
+                    möchtest, kannst du das Formular unten ausfüllen.</p>
+            </header>
+            <main>
+                <div class="list">
+
+                </div>
+                <div class="centered">
+                    <button class="button" id="toggle">Mehr</button>
+                </div>
+            </main>
+            <footer>
+                <div class="accordion" data-group="1">
+                    <div class="accordion__head">
+                        <div class="accordion__head__icon accordion--trigger">
+                            <i class="ts-angle-right"></i>
+                        </div>
+                        <div class="accordion__head__title  accordion--trigger">
+                            Deine Seite fehlt noch?
+                        </div>
+                        <div class="accordion__head__right  accordion--trigger">
+                        </div>
+                    </div>
+                    <div class="accordion__body">
+                        <div class="accordion__item form">
+                            <div class="form-line input-group ">
+                                <input class="input form-item" id="firstName" type="text" required>
+                                <label class="form-label" id="firstName-label">Vorname</label>
+                            </div>
+                            <div class="form-line input-group">
+                                <input class="input form-item" id="lastName" type="text" required>
+                                <label class="form-label" id="lastName-label">Nachname</label>
+                            </div>
+                            <div class="form-line input-group">
+                                <input class="input form-item" id="eMail" type="text" required>
+                                <label class="form-label" id="eMail-label">E-Mail</label>
+                            </div>
+                            <div class="form-line input-group">
+                                <input class="input form-item" id="address" type="text">
+                                <label class="form-label">Straße/Hausnummer</label>
+                            </div>
+                            <div class="two-items">
+                                <div class="input-group form-plz">
+                                    <input class="input form-item" id="postcode" type="text">
+                                    <label class="form-label">PLZ</label>
+                                </div>
+                                <div class="input-group form-place">
+                                    <input class="input form-item" id="place" type="text">
+                                    <label class="form-label">Ort</label>
+                                </div>
+                            </div>
+                            <div class="form-line input-group">
+                                <input class="input form-item" id="siteName" type="text" required>
+                                <label class="form-label" id="siteName-label">Deine Seite</label>
+                            </div>
+                            <div class="form-line">
+                                <textarea class="input form-item" id="comment" placeholder="Anmerkungen"
+                                    type="text"></textarea>
+                            </div>
+                            <div class="form-line">
+                                <div class="centered">
+                                    <button class="button" id="send">Hinzufügen</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
+        <script src="https://api.chayns-static.space/js/v4.0/chayns.min.js"></script>
+        <script src="https://api.chayns-static.space/ui/v4.0/chayns-ui.min.js"></script>
+        <script src="https://polyfillsvc.tobit.com/polyfill.min.js?flags=gated&features=default,es6,Map,fetch"></script>
     </div>
-    <script src="https://api.chayns-static.space/js/v4.0/chayns.min.js"></script>
-    <script src="https://polyfillsvc.tobit.com/polyfill.min.js?flags=gated&features=default,es6,Map,fetch"></script>
-</div>
 </body>
+
 </html>
